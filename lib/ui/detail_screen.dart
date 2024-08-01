@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:liblary_new/data/model/book.dart';
 import 'package:liblary_new/ui/widgets/my_download_button.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  final Book book;
+  final int index;
+  const DetailScreen({
+    super.key,
+    required this.book,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: Colors.grey[200],
-      floatingActionButton: const MyDownloadButton(),
+      floatingActionButton: MyDownloadButton(
+        index: index,
+      ),
       appBar: AppBar(
-        title: const Text(
-          "Tittle book",
-          style: TextStyle(
+        title: Text(
+          book.title,
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w400,
             overflow: TextOverflow.fade,
@@ -27,9 +36,9 @@ class DetailScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           centerTitle: true,
           backgroundColor: Colors.grey[300],
-          title: const Text(
-            "Author",
-            style: TextStyle(
+          title: Text(
+            book.author,
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
             ),
@@ -47,8 +56,11 @@ class DetailScreen extends StatelessWidget {
                 height: 200,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: Colors.grey[400],
-                ),
+                    color: Colors.grey[400],
+                    image: DecorationImage(
+                      image: NetworkImage(book.imageUrl),
+                      fit: BoxFit.cover,
+                    )),
               )
             ],
           ),
@@ -68,13 +80,13 @@ class DetailScreen extends StatelessWidget {
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.35,
-            child: const SingleChildScrollView(
-              padding: EdgeInsets.all(20),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
                   Text(
-                    "Bu zo'r kitob, menga yoqadi",
-                    style: TextStyle(
+                    book.description,
+                    style: const TextStyle(
                       fontSize: 18,
                     ),
                   ),

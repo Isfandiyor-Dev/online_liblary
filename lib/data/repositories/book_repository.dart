@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:liblary_new/data/model/book.dart';
 
 class BookRepository {
-  static List<Book> books = [
+  List<Book> books = [
     Book(
+      id: UniqueKey().toString(),
       title: 'Clean Code',
       author: 'Robert C. Martin',
       description: 'A Handbook of Agile Software Craftsmanship',
@@ -12,6 +14,7 @@ class BookRepository {
           'https://kolegite.com/EE_library/books_and_lectures/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8%D1%80%D0%B0%D0%BD%D0%B5/Clean%20Code%20-%20%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Effective Java',
       author: 'Joshua Bloch',
       description: 'Best practices for the Java platform',
@@ -21,6 +24,7 @@ class BookRepository {
           'https://kea.nu/files/textbooks/new/Effective%20Java%20%282017%2C%20Addison-Wesley%29.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Design Patterns',
       author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
       description: 'Elements of Reusable Object-Oriented Software',
@@ -29,6 +33,7 @@ class BookRepository {
       downloadUrl: 'https://www.javier8a.com/itc/bd1/articulo.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Refactoring',
       author: 'Martin Fowler',
       description: 'Improving the Design of Existing Code',
@@ -38,6 +43,7 @@ class BookRepository {
           'https://dl.ebooksworld.ir/motoman/Refactoring.Improving.the.Design.of.Existing.Code.2nd.edition.www.EBooksWorld.ir.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'The Pragmatic Programmer',
       author: 'Andrew Hunt, David Thomas',
       description: 'Your Journey to Mastery',
@@ -47,6 +53,7 @@ class BookRepository {
           'https://ia802308.us.archive.org/19/items/c-26_20211009/C26.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Code Complete',
       author: 'Steve McConnell',
       description: 'A Practical Handbook of Software Construction',
@@ -56,6 +63,7 @@ class BookRepository {
           'https://people.engr.tamu.edu/slupoli/notes/ProgrammingStudio/supplements/Code%20Complete%202nd.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Introduction to the Theory of Computation',
       author: 'Michael Sipser',
       description: 'A comprehensive introduction to the theory of computation',
@@ -65,6 +73,7 @@ class BookRepository {
           'https://mog.dog/files/SP2019/Sipser_Introduction.to.the.Theory.of.Computation.3E.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Artificial Intelligence: A Modern Approach',
       author: 'Stuart Russell, Peter Norvig',
       description:
@@ -74,6 +83,7 @@ class BookRepository {
           'https://people.engr.tamu.edu/guni/csce421/files/AI_Russell_Norvig.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Computer Networking: A Top-Down Approach',
       author: 'James Kurose, Keith Ross',
       description:
@@ -84,6 +94,7 @@ class BookRepository {
           'https://faculty.kfupm.edu.sa/ICS/hussaing/shared/Computer%20Networking%20A%20Top-Down%20Approach%206th%20Edition.pdf',
     ),
     Book(
+      id: UniqueKey().toString(),
       title: 'Introduction to Algorithms',
       author:
           'Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein',
